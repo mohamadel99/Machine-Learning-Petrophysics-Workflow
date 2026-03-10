@@ -1,0 +1,12 @@
+# ignore datasets
+data/
+
+# ignore results
+results/
+
+# ignore excel files
+*.xlsx
+*.csv
+
+# ignore well logs
+*.las

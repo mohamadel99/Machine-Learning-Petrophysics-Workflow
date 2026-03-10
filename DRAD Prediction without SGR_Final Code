@@ -12,8 +12,8 @@ from sklearn.ensemble import GradientBoostingRegressor #Model
 import lightgbm as lgb
 
 # Load your dataset
-df = pd.read_excel(r'C:\Users\Mohamed Adel\Documents\KH-17 Excell result.xlsx')
-y = pd.read_excel(r'C:\Users\Mohamed Adel\Documents\KH-17 Excell result.xlsx')
+df = pd.read_excel("data/well_log_data.xlsx")
+y = pd.read_excel("data/well_log_data.xlsx")
 
 
 df = df.iloc[:4954, :5] # rows, columns
@@ -129,7 +129,7 @@ for name, model in models.items():
     df[f'Predicted_{name.replace(" ", "_")}'] = model.predict(X) # predicted DRAD column as a new column in the dataframe
 
 # Exportig the new genrated target to an excel file
-df.to_excel(r'C:\Users\Mohamed Adel\Desktop\updated_dataset_with_predictions_KH-17.xlsx', index=False)
+df.to_excel("data/well_log_data.xlsx", index=False)
 
 # Printing the MSE and R-squared for each model
 for name, metrics in results.items():
